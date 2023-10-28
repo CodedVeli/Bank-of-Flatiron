@@ -2,17 +2,24 @@
 
 const TransactionList = ({transactions, searchResult}) => {
 
-    // const renderedSearch= searchResult.map((transaction) => {
-    //     return (
-    //         <div key={transaction.id}>
-    //             <h3>{transaction.description}</h3>
-    //             <p>{transaction.category}</p>
-    //             <p>{transaction.amount}</p>
-    //         </div>
-    //     )
-    // })
+    const renderedSearch= searchResult.forEach(element => {
 
-    const renderedList =  searchResult || transactions.map((transaction) => {
+        return (
+            <div key={element.id}>
+                
+                
+               <table className=" flex flex-row  items-center justify-between gap-6 mx-9 border-x-2 p-2 border-y-2">                
+               <td>{element.date}</td>
+                <td>{element.description}</td>
+                <td >{element.category}</td>
+                <td>{element.amount}</td>
+               </table>
+            </div>
+        )
+        
+    });
+   
+    const renderedList =   transactions.map((transaction) => {
         return (
             <div key={transaction.id}>
                 
@@ -34,7 +41,7 @@ const TransactionList = ({transactions, searchResult}) => {
                     <td>Category</td>
                     <td>Amount</td>
                 </table>
-            {    renderedList  }
+            {    renderedList || renderedSearch }
            
         </div>
     );
