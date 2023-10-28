@@ -24,11 +24,10 @@ function App() {
 
   const onSearchSubmit = async (term) => {
     const response = await SearchTerm(term, setSearchResult)
-    setSearchResult(response)
 
     console.log(response)
   }
-  console.log("searchResult tt",searchResult)  
+  console.log("searchResult:",searchResult)  
 
 
 
