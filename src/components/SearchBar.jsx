@@ -7,7 +7,7 @@ const SearchBar = ({ onSearchSubmit }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSearchSubmit(term); // Pass the 'term' to the onSearchSubmit function
+        onSearchSubmit(term);
     };
 
     const handleChange = (e) => {
